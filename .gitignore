@@ -1,6 +1,9 @@
 node_modules/
 .DS_Store
 
+# Library build artifact (produced by `npm run build:lib`)
+dist/
+
 # Build output (generated into the served dir) — keep only the static shell
 /public/*
 !/public/index.html

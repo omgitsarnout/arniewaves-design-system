@@ -4,29 +4,47 @@ A React component library for **ArnieWaves** — small audio tools, fair prices,
 great sound. DIY/hand-crafted aesthetic: marker-pen headings (Permanent Marker),
 monospace everything (Space Mono), warm earthy tones, light + dark aware.
 
-## Quick start
+## Develop locally
 
 ```bash
 npm install
-npm run dev      # → http://localhost:5173  (live showcase)
-npm run build    # → public/  (bundle + stylesheets)
+npm run dev       # → http://localhost:5173  (live showcase)
+npm run build     # → public/  (showcase bundle + stylesheets)
+npm run build:lib # → dist/    (publishable ESM + arniewaves.css)
 ```
+
+## Install (GitHub Packages)
+
+Published to GitHub Packages as `@omgitsarnout/arniewaves-design-system`. Point the
+`@omgitsarnout` scope at the GitHub registry and authenticate with a token that has
+`read:packages`:
+
+```ini
+# .npmrc
+@omgitsarnout:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+```bash
+npm install @omgitsarnout/arniewaves-design-system
+```
+
+React 18+ is a peer dependency.
 
 ## Using the components
 
-Import the two stylesheets once (tokens first), then use the components:
-
-```html
-<link rel="stylesheet" href="tokens.css" />
-<link rel="stylesheet" href="components.css" />
-```
+Import the stylesheet once, then the components:
 
 ```jsx
-import { Button, Badge, TextField, Select, ProductCard } from "arniewaves-design-system";
+import "@omgitsarnout/arniewaves-design-system/styles.css";
+import { Button, Badge, ProductCard } from "@omgitsarnout/arniewaves-design-system";
 
 <Button variant="primary">Add to cart</Button>
 <Badge variant="orange">$39</Badge>
 ```
+
+`styles.css` bundles the design tokens (incl. the Google Fonts `@import`) and every
+component's styles.
 
 Dark mode is driven by a data attribute on the root element:
 
@@ -234,6 +252,19 @@ All brand values live in [`src/styles/tokens.css`](src/styles/tokens.css) as
 CSS custom properties (`--aw-*`). Components reference tokens only — restyle the
 whole system by editing that one file. See [`CLAUDE.md`](CLAUDE.md) for the full
 brand spec (colors, type scale, spacing).
+
+## Publishing
+
+A [`Publish package`](.github/workflows/publish.yml) GitHub Actions workflow pushes
+the package to GitHub Packages. It runs:
+
+- **Manually** — Actions tab → *Publish package* → *Run workflow*, with an optional
+  `bump` (`patch`/`minor`/`major`) that version-bumps, commits, and tags before publishing.
+- **On release** — automatically when a GitHub Release is published.
+
+It authenticates with the built-in `GITHUB_TOKEN` (no secrets to configure) and runs
+`npm run build:lib` before `npm publish`. Note: re-publishing an existing version fails,
+so bump the version (via the workflow input or `npm version`) for each release.
 
 ## Sync to Claude Design
 
