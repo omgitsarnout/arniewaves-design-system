@@ -1,0 +1,122 @@
+{
+  "projectId": "8377781e-b6c7-45af-803f-bbcbfb90fe35",
+  "shape": "package",
+  "pkg": "@omgitsarnout/arniewaves-design-system",
+  "globalName": "ArnieWaves",
+  "buildCmd": "npm run build:lib",
+  "cssEntry": "dist/arniewaves.css",
+  "readmeHeader": ".design-sync/conventions.md",
+  "componentSrcMap": {
+    "Button": "src/components/Button.jsx",
+    "Badge": "src/components/Badge.jsx",
+    "SectionLabel": "src/components/SectionLabel.jsx",
+    "Icon": "src/components/Icon.jsx",
+    "Card": "src/components/Card.jsx",
+    "TextField": "src/components/TextField.jsx",
+    "Textarea": "src/components/Textarea.jsx",
+    "Select": "src/components/Select.jsx",
+    "Checkbox": "src/components/Choice.jsx",
+    "Radio": "src/components/Choice.jsx",
+    "Toggle": "src/components/Choice.jsx",
+    "Slider": "src/components/Slider.jsx",
+    "SegmentedControl": "src/components/SegmentedControl.jsx",
+    "Table": "src/components/Table.jsx",
+    "FeatureMatrix": "src/components/FeatureMatrix.jsx",
+    "DescriptionList": "src/components/DescriptionList.jsx",
+    "Stat": "src/components/Stat.jsx",
+    "Avatar": "src/components/Avatar.jsx",
+    "AvatarGroup": "src/components/Avatar.jsx",
+    "Knob": "src/components/Knob.jsx",
+    "LevelMeter": "src/components/LevelMeter.jsx",
+    "AudioPlayer": "src/components/AudioPlayer.jsx",
+    "Waveform": "src/components/Waveform.jsx",
+    "ProductCard": "src/components/ProductCard.jsx",
+    "PricingCard": "src/components/PricingCard.jsx",
+    "Hero": "src/components/Hero.jsx",
+    "CTABanner": "src/components/CTABanner.jsx",
+    "Testimonial": "src/components/Testimonial.jsx",
+    "Accordion": "src/components/Accordion.jsx",
+    "Alert": "src/components/Alert.jsx",
+    "Progress": "src/components/Progress.jsx",
+    "Spinner": "src/components/Spinner.jsx",
+    "EmptyState": "src/components/EmptyState.jsx",
+    "Tooltip": "src/components/Tooltip.jsx",
+    "Modal": "src/components/Modal.jsx",
+    "Drawer": "src/components/Drawer.jsx",
+    "Tabs": "src/components/Tabs.jsx",
+    "Breadcrumbs": "src/components/Breadcrumbs.jsx",
+    "Pagination": "src/components/Pagination.jsx",
+    "Stepper": "src/components/Stepper.jsx",
+    "Menu": "src/components/Menu.jsx"
+  },
+  "dtsPropsFor": {
+    "Button": "variant?: \"primary\" | \"outline\" | \"ghost\";\nsize?: \"sm\" | \"md\" | \"lg\";\nfullWidth?: boolean;\nloading?: boolean;\nleadingIcon?: React.ReactNode;\ntrailingIcon?: React.ReactNode;\ndisabled?: boolean;\nchildren?: React.ReactNode;\nclassName?: string;",
+    "ProductCard": "name: string;\nprice?: string;\ndescription?: string;\nformats?: string[];\ncta?: string;\nonCtaClick?: () => void;\nseed?: number;\nclassName?: string;",
+    "PricingCard": "name: string;\nprice: string;\nperiod?: string;\ndescription?: string;\nfeatures?: Array<string | { label: string; included?: boolean; note?: string }>;\nfeatured?: boolean;\nbadge?: string;\ncta?: string;\nctaVariant?: \"primary\" | \"outline\" | \"ghost\";\nonCtaClick?: () => void;\nclassName?: string;",
+    "Modal": "open: boolean;\nonClose?: () => void;\ntitle?: React.ReactNode;\nchildren?: React.ReactNode;\nfooter?: React.ReactNode;\nsize?: \"sm\" | \"md\" | \"lg\";\ncloseOnOverlay?: boolean;\nshowClose?: boolean;\nclassName?: string;",
+    "Drawer": "open: boolean;\nonClose?: () => void;\nside?: \"right\" | \"left\" | \"bottom\";\ntitle?: React.ReactNode;\nchildren?: React.ReactNode;\nfooter?: React.ReactNode;\nsize?: number | string;\nshowClose?: boolean;\nclassName?: string;",
+    "Tooltip": "label: React.ReactNode;\nplacement?: \"top\" | \"bottom\" | \"left\" | \"right\";\nchildren: React.ReactNode;\nclassName?: string;",
+    "Menu": "trigger: React.ReactNode;\nitems?: Array<{ label?: React.ReactNode; icon?: string; shortcut?: string; onClick?: () => void; danger?: boolean; disabled?: boolean; separator?: boolean }>;\nalign?: \"start\" | \"end\";\nclassName?: string;",
+    "TextField": "label?: string;\nplaceholder?: string;\nhint?: string;\nerror?: string;\nsize?: \"sm\" | \"md\";\nleading?: React.ReactNode;\ntrailing?: React.ReactNode;\nfullWidth?: boolean;\nrequired?: boolean;\nid?: string;\nvalue?: string;\ndefaultValue?: string;\ndisabled?: boolean;\nonChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;\nclassName?: string;",
+    "Textarea": "label?: string;\nplaceholder?: string;\nhint?: string;\nerror?: string;\nrows?: number;\nfullWidth?: boolean;\nrequired?: boolean;\nid?: string;\nvalue?: string;\ndefaultValue?: string;\ndisabled?: boolean;\nonChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;\nclassName?: string;",
+    "Select": "options?: Array<{ value: string; label: string; description?: string; disabled?: boolean }>;\nvalue?: string | string[];\nonChange?: (value: string | string[]) => void;\nmultiple?: boolean;\nsearchable?: boolean;\nplaceholder?: string;\nlabel?: string;\nhint?: string;\nerror?: string;\ndisabled?: boolean;\nclearable?: boolean;\nfullWidth?: boolean;\nclassName?: string;",
+    "SegmentedControl": "options?: Array<string | { value: string; label: string; badge?: React.ReactNode }>;\nvalue?: string;\nonChange?: (value: string) => void;\nsize?: \"sm\" | \"md\";\nclassName?: string;",
+    "Checkbox": "label?: React.ReactNode;\ndescription?: React.ReactNode;\nchecked?: boolean;\ndefaultChecked?: boolean;\nonChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;\ndisabled?: boolean;\nid?: string;\nclassName?: string;",
+    "Radio": "label?: React.ReactNode;\ndescription?: React.ReactNode;\nname?: string;\nchecked?: boolean;\ndefaultChecked?: boolean;\nonChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;\ndisabled?: boolean;\nid?: string;\nclassName?: string;",
+    "Toggle": "label?: React.ReactNode;\ndescription?: React.ReactNode;\nchecked?: boolean;\ndefaultChecked?: boolean;\nonChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;\ndisabled?: boolean;\nid?: string;\nclassName?: string;",
+    "Slider": "label?: React.ReactNode;\nvalue: number;\nonChange?: (value: number) => void;\nmin?: number;\nmax?: number;\nstep?: number;\nshowValue?: boolean;\nvalueLabel?: (value: number) => React.ReactNode;\ndisabled?: boolean;\nfullWidth?: boolean;\nid?: string;\nclassName?: string;",
+    "Badge": "variant?: \"orange\" | \"sand\" | \"outline\";\nchildren?: React.ReactNode;\ndot?: boolean;\nonRemove?: () => void;\nclassName?: string;",
+    "SectionLabel": "children?: React.ReactNode;\nclassName?: string;",
+    "Icon": "name: string;\nsize?: number;\nstrokeWidth?: number;\ntitle?: string;\nclassName?: string;",
+    "Card": "children?: React.ReactNode;\npadded?: boolean;\nclassName?: string;",
+    "DescriptionList": "items?: Array<{ term: React.ReactNode; description: React.ReactNode }>;\nclassName?: string;",
+    "Table": "columns: Array<{ key: string; header: React.ReactNode; align?: \"left\" | \"right\" | \"center\"; render?: (row: any, index: number) => React.ReactNode }>;\ndata: any[];\ngetRowKey?: (row: any, index: number) => string;\ncaption?: string;\nstickyHeader?: boolean;\nclassName?: string;",
+    "FeatureMatrix": "tiers: Array<{ key: string; name: React.ReactNode; price?: React.ReactNode; period?: React.ReactNode; featured?: boolean; badge?: React.ReactNode; cta?: React.ReactNode }>;\ngroups: Array<{ label?: React.ReactNode; features: Array<{ label: React.ReactNode; values: Record<string, boolean | string> }> }>;\nonChoose?: (tierKey: string) => void;\nclassName?: string;",
+    "Stat": "label?: React.ReactNode;\nvalue?: React.ReactNode;\ndelta?: React.ReactNode;\ntrend?: \"up\" | \"down\";\nicon?: string | React.ReactNode;\nclassName?: string;",
+    "Avatar": "src?: string;\nname?: string;\nsize?: number;\nclassName?: string;",
+    "AvatarGroup": "children?: React.ReactNode;\nmax?: number;\nsize?: number;\nclassName?: string;",
+    "Knob": "label?: string;\nvalue: number;\nonChange?: (value: number) => void;\nmin?: number;\nmax?: number;\nstep?: number;\nsize?: number;\nvalueLabel?: (value: number) => React.ReactNode;\ndisabled?: boolean;\nclassName?: string;",
+    "LevelMeter": "value?: number;\nsegments?: number;\norientation?: \"vertical\" | \"horizontal\";\nchannels?: number;\nanimated?: boolean;\nlabel?: string;\nclassName?: string;",
+    "AudioPlayer": "title?: string;\nartist?: string;\nduration?: number;\nseed?: number;\nonPlay?: () => void;\nonPause?: () => void;\nonSeek?: (seconds: number) => void;\nclassName?: string;",
+    "Waveform": "seed?: number;\nbars?: number;\nclassName?: string;",
+    "Hero": "eyebrow?: React.ReactNode;\ntitle: React.ReactNode;\nsubtitle?: React.ReactNode;\nactions?: React.ReactNode;\nmedia?: React.ReactNode;\nalign?: \"left\" | \"center\";\nclassName?: string;",
+    "CTABanner": "title: React.ReactNode;\ndescription?: React.ReactNode;\ntone?: \"surface\" | \"primary\";\nchildren?: React.ReactNode;\nclassName?: string;",
+    "Testimonial": "quote: React.ReactNode;\nname: string;\nrole?: string;\navatarSrc?: string;\nrating?: number;\nclassName?: string;",
+    "Accordion": "children: React.ReactNode;\nallowMultiple?: boolean;\ndefaultValue?: string | string[];\nclassName?: string;",
+    "Alert": "variant?: \"info\" | \"success\" | \"warning\" | \"danger\";\ntitle?: React.ReactNode;\nchildren?: React.ReactNode;\nicon?: boolean;\nonClose?: () => void;\nclassName?: string;",
+    "Progress": "value?: number;\nmax?: number;\nindeterminate?: boolean;\nlabel?: React.ReactNode;\nshowValue?: boolean;\nsize?: \"sm\" | \"md\";\nclassName?: string;",
+    "Spinner": "size?: number;\nlabel?: string;\nclassName?: string;",
+    "EmptyState": "icon?: string | React.ReactNode;\ntitle?: string;\ndescription?: string;\naction?: React.ReactNode;\nclassName?: string;",
+    "Tabs": "value?: string;\ndefaultValue?: string;\nonChange?: (value: string) => void;\nchildren?: React.ReactNode;\nclassName?: string;",
+    "Breadcrumbs": "items?: Array<{ label: string; href?: string }>;\nclassName?: string;",
+    "Pagination": "page?: number;\ntotal?: number;\nonChange?: (page: number) => void;\nsiblings?: number;\nclassName?: string;",
+    "Stepper": "value: number;\nonChange?: (value: number) => void;\nmin?: number;\nmax?: number;\nstep?: number;\nlabel?: string;\nsize?: \"sm\" | \"md\";\nclassName?: string;"
+  },
+  "overrides": {
+    "Modal": {
+      "cardMode": "single",
+      "viewport": "720x560"
+    },
+    "Drawer": {
+      "cardMode": "single",
+      "viewport": "780x560"
+    },
+    "Menu": {
+      "cardMode": "single",
+      "viewport": "440x380"
+    },
+    "Tooltip": {
+      "cardMode": "single",
+      "viewport": "560x320"
+    },
+    "Table": {
+      "cardMode": "column"
+    },
+    "FeatureMatrix": {
+      "cardMode": "column"
+    },
+    "Testimonial": {
+      "cardMode": "column"
+    }
+  }
+}

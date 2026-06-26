@@ -10,6 +10,7 @@ const VARIANT_ICON = {
 /**
  * Alert / Banner — inline message. variant: info | success | warning | danger.
  * Pass `onClose` to make it dismissible; `icon={false}` to drop the glyph.
+ * @category Feedback
  */
 export function Alert({
   variant = "info",

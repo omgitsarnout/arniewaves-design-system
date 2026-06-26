@@ -7,3 +7,10 @@ dist/
 # Build output (generated into the served dir) — keep only the static shell
 /public/*
 !/public/index.html
+
+# design-sync (staged scripts, build output, machine state)
+.ds-sync/
+ds-bundle/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules

@@ -15,6 +15,7 @@
  *   getRowKey?: (row, index) => string
  *   caption?:  string
  *   stickyHeader?: boolean
+ * @category Data-Display
  */
 export function Table({
   columns = [],

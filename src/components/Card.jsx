@@ -1,4 +1,5 @@
-/** Card — generic surface. 0.5px border, lg radius. */
+/** Card — generic surface. 0.5px border, lg radius. * @category Foundations
+*/
 export function Card({ children, className = "", padded = true, ...rest }) {
   return (
     <div

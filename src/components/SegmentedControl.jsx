@@ -11,6 +11,7 @@ import { useLayoutEffect, useRef, useState } from "react";
  *   options: Array<string | { value, label, badge? }>
  *   value, onChange(value)
  *   size: "sm" | "md"
+ * @category Forms
  */
 export function SegmentedControl({
   options = [],

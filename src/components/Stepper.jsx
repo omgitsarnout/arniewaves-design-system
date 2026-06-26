@@ -3,6 +3,7 @@ import { Icon } from "./Icon.jsx";
 /**
  * Stepper — compact numeric stepper (e.g. cart quantity).
  * Props: value, onChange(number), min, max, step, label, size "sm"|"md"
+ * @category Navigation
  */
 export function Stepper({
   value,

@@ -7,6 +7,7 @@ import { Icon } from "./Icon.jsx";
  * or { separator: true }. Closes on outside-click / Esc; ↑/↓ move focus.
  *
  * Props: trigger, items, align "start" | "end"
+ * @category Navigation
  */
 export function Menu({ trigger, items = [], align = "start", className = "" }) {
   const [open, setOpen] = useState(false);

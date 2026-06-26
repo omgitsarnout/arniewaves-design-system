@@ -8,6 +8,7 @@ import { Icon } from "./Icon.jsx";
  * On mobile a side drawer goes near-full-width; "bottom" is a bottom sheet.
  *
  * Props: open, onClose, side, title, children, footer, size (px | css length)
+ * @category Feedback
  */
 export function Drawer({
   open,

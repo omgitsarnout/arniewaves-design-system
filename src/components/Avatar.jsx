@@ -13,6 +13,7 @@ function initialsOf(name = "") {
 /**
  * Avatar — image, or initials fallback derived from `name`. Square-ish round.
  * Props: src, name, size, className
+ * @category Data-Display
  */
 export function Avatar({ src, name, size = 40, className = "", ...rest }) {
   return (
@@ -34,6 +35,7 @@ export function Avatar({ src, name, size = 40, className = "", ...rest }) {
 /**
  * AvatarGroup — overlapping stack; `max` caps the visible count and adds a
  * "+N" chip for the remainder.
+ * @category Data-Display
  */
 export function AvatarGroup({ children, max, size, className = "", ...rest }) {
   const items = Children.toArray(children);

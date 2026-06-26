@@ -4,6 +4,7 @@ import { useId, useState } from "react";
  * Tooltip — wraps a single interactive child, shows on hover + focus.
  * CSS-positioned via `placement`: "top" | "bottom" | "left" | "right".
  * Purely a supplementary label — not for essential-only content.
+ * @category Feedback
  */
 export function Tooltip({
   label,

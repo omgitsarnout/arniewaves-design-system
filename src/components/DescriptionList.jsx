@@ -2,6 +2,7 @@
  * DescriptionList / SpecList — key→value pairs (e.g. plugin specs).
  * Term left, value right on desktop; stacks on mobile.
  * Props: items: Array<{ term, description }>
+ * @category Data-Display
  */
 export function DescriptionList({ items = [], className = "" }) {
   return (

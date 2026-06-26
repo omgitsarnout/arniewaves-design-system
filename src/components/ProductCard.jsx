@@ -6,6 +6,7 @@ import { Waveform } from "./Waveform.jsx";
  * ProductCard — the flagship composite.
  * Sand thumbnail w/ waveform, marker-pen name, price badge, mono description,
  * format metadata, full-width primary CTA.
+ * @category Commerce
  */
 export function ProductCard({
   name,

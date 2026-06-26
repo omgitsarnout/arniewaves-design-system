@@ -14,6 +14,7 @@ function fmt(sec) {
  * Stacks cleanly on mobile.
  *
  * Props: title, artist, duration (s), seed, onPlay, onPause, onSeek(seconds)
+ * @category Audio
  */
 export function AudioPlayer({
   title = "Untitled",

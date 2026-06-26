@@ -1,6 +1,7 @@
 import { forwardRef, useId } from "react";
 
-/** Textarea — multiline counterpart to TextField. */
+/** Textarea — multiline counterpart to TextField. * @category Forms
+*/
 export const Textarea = forwardRef(function Textarea(
   { label, hint, error, rows = 4, fullWidth = false, id, className = "", required, ...rest },
   ref,

@@ -1,4 +1,5 @@
-/** Spinner — standalone loading indicator. Inherits `currentColor`. */
+/** Spinner — standalone loading indicator. Inherits `currentColor`. * @category Feedback
+*/
 export function Spinner({ size = 20, label = "Loading", className = "", ...rest }) {
   return (
     <span

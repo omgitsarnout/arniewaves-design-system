@@ -1,6 +1,7 @@
 /**
  * Waveform — hand-wired SVG illustration for product-card thumbnails.
  * Deterministic bars (seeded by `seed`) in Clay → Sunrise.
+ * @category Audio
  */
 export function Waveform({ seed = 1, bars = 32, className = "", ...rest }) {
   // Tiny deterministic PRNG so the same seed always draws the same wave.

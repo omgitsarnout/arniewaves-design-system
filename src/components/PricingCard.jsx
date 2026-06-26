@@ -19,6 +19,7 @@ import { Icon } from "./Icon.jsx";
  *   onCtaClick
  *
  * Drop several into `.aw-tiers` (or any grid) to form a comparison.
+ * @category Commerce
  */
 export function PricingCard({
   name,
