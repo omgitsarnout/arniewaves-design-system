@@ -1,0 +1,20 @@
+{
+  "name": "arniewaves-design-system",
+  "version": "0.1.0",
+  "description": "ArnieWaves design system — DIY, hand-crafted audio-tools aesthetic. React component library.",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node scripts/build.mjs --serve",
+    "build": "node scripts/build.mjs",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0"
+  }
+}

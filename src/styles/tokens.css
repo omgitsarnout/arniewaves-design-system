@@ -1,0 +1,76 @@
+/* ArnieWaves design tokens
+   DIY, hand-crafted audio-tools aesthetic. Warm earthy tones, marker-pen
+   headings, monospace body. Light + dark aware. */
+
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  /* Brand palette */
+  --aw-primary: #e8732a;
+  --aw-primary-hover: #d4641f;
+  --aw-primary-bg: #fdf0e8; /* badge tint bg */
+  --aw-primary-text: #7a3208; /* badge tint text */
+  --aw-secondary: #c4875a;
+  --aw-surface: #f5e0be;
+  --aw-surface-text: #5c3520;
+  --aw-dark: #6b3520;
+  --aw-background: #faf6ef;
+  --aw-text: #3d1e0e;
+  --aw-muted: #a07858;
+  --aw-tertiary: #b89876;
+  --aw-border: rgba(107, 53, 32, 0.18);
+  --aw-border-strong: rgba(107, 53, 32, 0.32);
+  --aw-danger: #b23b1e;
+  --aw-on-primary: #fff;
+
+  /* Typography */
+  --aw-font-display: "Permanent Marker", cursive;
+  --aw-font-body: "Space Mono", monospace;
+
+  /* Shape */
+  --aw-radius-sm: 2px; /* badges */
+  --aw-radius: 4px; /* buttons, inputs, thumbnails */
+  --border-radius-lg: 10px; /* cards */
+
+  /* Spacing scale */
+  --aw-space-1: 4px;
+  --aw-space-2: 8px;
+  --aw-space-3: 12px;
+  --aw-space-4: 16px;
+  --aw-space-5: 24px;
+  --aw-space-6: 32px;
+
+  /* Elevation */
+  --aw-shadow: 0 1px 2px rgba(107, 53, 32, 0.08);
+  --aw-shadow-pop: 0 6px 24px rgba(107, 53, 32, 0.18);
+  --aw-ring: 0 0 0 3px rgba(232, 115, 42, 0.28);
+}
+
+:root[data-theme="dark"] {
+  --aw-primary: #f09050;
+  --aw-primary-hover: #f5a368;
+  --aw-primary-bg: #3d2010;
+  --aw-primary-text: #f5c098;
+  --aw-secondary: #c4875a;
+  --aw-surface: #2d2015;
+  --aw-surface-text: #5c3520;
+  --aw-dark: #e8d0b8;
+  --aw-background: #1a1208;
+  --aw-text: #f0e2d0;
+  --aw-muted: #b09080;
+  --aw-tertiary: #8c7258;
+  --aw-border: rgba(232, 208, 184, 0.16);
+  --aw-border-strong: rgba(232, 208, 184, 0.3);
+  --aw-danger: #e87a5c;
+  --aw-on-primary: #1a1208;
+
+  --aw-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --aw-shadow-pop: 0 6px 24px rgba(0, 0, 0, 0.5);
+  --aw-ring: 0 0 0 3px rgba(240, 144, 80, 0.32);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

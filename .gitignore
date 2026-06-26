@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+
+# Build output (generated into the served dir) — keep only the static shell
+/public/*
+!/public/index.html

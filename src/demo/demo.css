@@ -1,0 +1,112 @@
+/* Showcase chrome only — not part of the published component styles. */
+body {
+  margin: 0;
+  background: var(--aw-background);
+  color: var(--aw-text);
+  font-family: var(--aw-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+.demo {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 24px 96px;
+}
+.demo__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.demo__brand {
+  font-family: var(--aw-font-display);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--aw-text);
+  margin: 0;
+}
+.demo__tag {
+  font-size: 12px;
+  color: var(--aw-muted);
+  margin: 10px 0 0;
+  line-height: 1.6;
+  max-width: 50ch;
+}
+.demo__theme {
+  flex: none;
+}
+.demo section {
+  margin-top: 48px;
+}
+.demo h2 {
+  font-family: var(--aw-font-display);
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--aw-text);
+  margin: 6px 0 20px;
+}
+.demo__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+.demo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.demo__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 360px;
+}
+.demo__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.demo__billing {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.demo__icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+.demo__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px 10px;
+  border: 0.5px solid var(--aw-border-strong);
+  border-radius: var(--aw-radius);
+  color: var(--aw-text);
+  background: var(--aw-background);
+}
+.demo__icon:hover {
+  border-color: var(--aw-primary);
+  color: var(--aw-primary);
+}
+.demo__icon-name {
+  font-size: 10px;
+  color: var(--aw-tertiary);
+  text-align: center;
+  word-break: break-word;
+}
+.demo__note {
+  font-size: 11px;
+  color: var(--aw-tertiary);
+  margin: 14px 0 0;
+}
+.demo__divider {
+  height: 0.5px;
+  background: var(--aw-border-strong);
+  border: none;
+  margin: 56px 0 0;
+}
