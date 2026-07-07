@@ -3,6 +3,7 @@ import { Icon } from "./Icon.jsx";
 /**
  * Breadcrumbs — trail navigation.
  * Props: items: Array<{ label, href? }>. The last item is the current page.
+ * @category Navigation
  */
 export function Breadcrumbs({ items = [], className = "" }) {
   return (

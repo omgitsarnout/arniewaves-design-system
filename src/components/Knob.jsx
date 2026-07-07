@@ -6,6 +6,7 @@ import { useCallback, useId, useRef } from "react";
  * from -135° to +135°. Pointer events, so it works with touch.
  *
  * Props: label, value, onChange(number), min, max, step, size, valueLabel, disabled
+ * @category Audio
  */
 export function Knob({
   label,

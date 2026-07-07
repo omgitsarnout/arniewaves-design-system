@@ -1,6 +1,7 @@
 import { forwardRef, useId } from "react";
 
-/** Checkbox — boxy, marker-tick. */
+/** Checkbox — boxy, marker-tick. * @category Forms
+*/
 export const Checkbox = forwardRef(function Checkbox(
   { label, description, id, className = "", ...rest },
   ref,
@@ -21,7 +22,8 @@ export const Checkbox = forwardRef(function Checkbox(
   );
 });
 
-/** Radio — round counterpart. Group via shared `name`. */
+/** Radio — round counterpart. Group via shared `name`. * @category Forms
+*/
 export const Radio = forwardRef(function Radio(
   { label, description, id, className = "", ...rest },
   ref,
@@ -42,7 +44,8 @@ export const Radio = forwardRef(function Radio(
   );
 });
 
-/** Toggle / Switch. */
+/** Toggle / Switch. * @category Forms
+*/
 export const Toggle = forwardRef(function Toggle(
   { label, description, id, className = "", ...rest },
   ref,

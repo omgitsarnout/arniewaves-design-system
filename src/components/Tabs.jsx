@@ -1,4 +1,6 @@
-import { useId, useRef, useState } from "react";
+import { createContext, useContext, useId, useRef, useState } from "react";
+
+const TabsCtx = createContext(null);
 
 /**
  * Tabs — accessible tablist with roving keyboard nav (←/→/Home/End).
@@ -13,12 +15,8 @@ import { useId, useRef, useState } from "react";
  * </Tabs>
  *
  * Controlled via `value` + `onChange`, or uncontrolled via `defaultValue`.
+ * @category Navigation
  */
-
-import { createContext, useContext } from "react";
-
-const TabsCtx = createContext(null);
-
 export function Tabs({ value, defaultValue, onChange, children, className = "" }) {
   const [internal, setInternal] = useState(defaultValue);
   const active = value !== undefined ? value : internal;

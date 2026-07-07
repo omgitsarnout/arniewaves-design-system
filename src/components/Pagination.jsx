@@ -3,6 +3,7 @@ import { Icon } from "./Icon.jsx";
 /**
  * Pagination — page numbers with prev/next and ellipsis truncation.
  * Props: page (1-based), total, onChange(page), siblings
+ * @category Navigation
  */
 export function Pagination({ page = 1, total = 1, onChange, siblings = 1, className = "" }) {
   const range = (a, b) => (b >= a ? Array.from({ length: b - a + 1 }, (_, i) => a + i) : []);

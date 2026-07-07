@@ -13,6 +13,7 @@ import { Icon } from "./Icon.jsx";
  *   groups: Array<{ label?, features: Array<{ label, values: Record<tierKey, boolean|string> }> }>
  *   footer: render a CTA button row (default true)
  *   onChoose(tierKey)
+ * @category Data-Display
  */
 export function FeatureMatrix({
   tiers = [],

@@ -18,6 +18,7 @@ import {
  *   multiple: enable multi-select with checkable items + pills
  *   searchable: show the search box (default true)
  *   placeholder, label, hint, error, disabled, clearable
+ * @category Forms
  */
 export const Select = forwardRef(function Select(
   {

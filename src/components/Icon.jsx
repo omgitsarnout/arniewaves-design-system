@@ -1,15 +1,3 @@
-/**
- * Icon — a small inline-SVG icon set drawn in the ArnieWaves hand-wired style:
- * rounded caps/joins, single stroke weight, `currentColor` so they inherit text
- * color. Filled glyphs (play, pause, star, heart) set their own fill.
- *
- *   <Icon name="search" />
- *   <Icon name="play" size={20} />
- *   <Icon name="knob" className="..." aria-label="Tweak" />
- *
- * Decorative by default (aria-hidden). Pass `title` or `aria-label` to expose it.
- */
-
 // Each entry is the inner SVG markup for a 24×24 viewBox.
 export const ICONS = {
   // — common UI —
@@ -141,6 +129,18 @@ export const ICONS = {
 
 export const ICON_NAMES = Object.keys(ICONS);
 
+/**
+ * Icon — a small inline-SVG icon set drawn in the ArnieWaves hand-wired style:
+ * rounded caps/joins, single stroke weight, `currentColor` so they inherit text
+ * color. Filled glyphs (play, pause, star, heart) set their own fill.
+ *
+ *   <Icon name="search" />
+ *   <Icon name="play" size={20} />
+ *   <Icon name="knob" className="..." aria-label="Tweak" />
+ *
+ * Decorative by default (aria-hidden). Pass `title` or `aria-label` to expose it.
+ * @category Foundations
+ */
 export function Icon({
   name,
   size = 24,

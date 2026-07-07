@@ -3,6 +3,7 @@ import { Icon } from "./Icon.jsx";
 /**
  * EmptyState — friendly placeholder for empty lists / zero results.
  * Props: icon (name or node), title, description, action (node)
+ * @category Feedback
  */
 export function EmptyState({
   icon = "folder",

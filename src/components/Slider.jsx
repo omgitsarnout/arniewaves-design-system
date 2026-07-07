@@ -6,6 +6,7 @@ import { forwardRef, useId } from "react";
  *
  * Props: label, value, onChange(number), min, max, step, showValue,
  *        valueLabel(v)=>node, disabled, fullWidth
+ * @category Forms
  */
 export const Slider = forwardRef(function Slider(
   {

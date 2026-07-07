@@ -1,6 +1,7 @@
 /**
  * CTABanner — full-width call-to-action band. Put buttons in `children`.
  * Props: title, description, tone "surface"|"primary", children (actions)
+ * @category Marketing
  */
 export function CTABanner({
   title,

@@ -10,6 +10,7 @@ const AccordionCtx = createContext(null);
  * <Accordion defaultValue="a">
  *   <Accordion.Item value="a" title="…">…</Accordion.Item>
  * </Accordion>
+ * @category Marketing
  */
 export function Accordion({
   children,

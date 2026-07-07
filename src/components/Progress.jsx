@@ -1,6 +1,7 @@
 /**
  * Progress — linear progress bar. Pass `indeterminate` for an unknown-length
  * loading state. size: "sm" | "md".
+ * @category Feedback
  */
 export function Progress({
   value = 0,

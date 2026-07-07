@@ -4,6 +4,7 @@ import { forwardRef } from "react";
  * Button — Space Mono 700, 12px, 4px radius.
  * variant: "primary" | "outline" | "ghost"
  * size:    "sm" | "md" | "lg"
+ * @category Foundations
  */
 export const Button = forwardRef(function Button(
   {

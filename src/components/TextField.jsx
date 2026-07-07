@@ -3,6 +3,7 @@ import { forwardRef, useId } from "react";
 /**
  * TextField — labelled text input with hint / error states and optional
  * leading/trailing adornments. Space Mono body.
+ * @category Forms
  */
 export const TextField = forwardRef(function TextField(
   {

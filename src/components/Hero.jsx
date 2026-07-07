@@ -2,6 +2,7 @@
  * Hero — page lede. Optional `media` slot puts a visual beside the copy
  * (stacks on mobile). Put CTAs in `actions`.
  * Props: eyebrow, title, subtitle, actions, media, align "left"|"center"
+ * @category Marketing
  */
 export function Hero({
   eyebrow,

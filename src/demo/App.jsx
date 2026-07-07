@@ -55,20 +55,47 @@ const MATRIX_GROUPS = [
   {
     label: "Streaming",
     features: [
-      { label: "Simultaneous streams", values: { free: "2", basic: "10", pro: "Unlimited" } },
-      { label: "Audio quality", values: { free: "128 kbps", basic: "320 kbps", pro: "Lossless" } },
-      { label: "Sample rate", values: { free: "44.1 kHz", basic: "48 kHz", pro: "192 kHz" } },
-      { label: "Internet relay", values: { free: false, basic: true, pro: true } },
-      { label: "Relay failover", values: { free: false, basic: false, pro: true } },
+      {
+        label: "Simultaneous streams",
+        values: { free: "2", basic: "10", pro: "Unlimited" },
+      },
+      {
+        label: "Audio quality",
+        values: { free: "128 kbps", basic: "320 kbps", pro: "Lossless" },
+      },
+      {
+        label: "Sample rate",
+        values: { free: "44.1 kHz", basic: "48 kHz", pro: "192 kHz" },
+      },
+      {
+        label: "Internet relay",
+        values: { free: false, basic: true, pro: true },
+      },
+      {
+        label: "Relay failover",
+        values: { free: false, basic: false, pro: true },
+      },
     ],
   },
   {
     label: "Workflow & support",
     features: [
-      { label: "Priority routing", values: { free: false, basic: false, pro: true } },
-      { label: "Multi-machine license", values: { free: false, basic: false, pro: true } },
-      { label: "Email support", values: { free: false, basic: true, pro: true } },
-      { label: "Priority chat support", values: { free: false, basic: false, pro: true } },
+      {
+        label: "Priority routing",
+        values: { free: false, basic: false, pro: true },
+      },
+      {
+        label: "Multi-machine license",
+        values: { free: false, basic: false, pro: true },
+      },
+      {
+        label: "Email support",
+        values: { free: false, basic: true, pro: true },
+      },
+      {
+        label: "Priority chat support",
+        values: { free: false, basic: false, pro: true },
+      },
     ],
   },
 ];
@@ -79,7 +106,12 @@ const FORMAT_OPTIONS = [
   { value: "aax", label: "AAX", description: "Pro Tools" },
   { value: "clap", label: "CLAP", description: "Open plugin standard" },
   { value: "standalone", label: "Standalone app" },
-  { value: "ladspa", label: "LADSPA", description: "Linux (legacy)", disabled: true },
+  {
+    value: "ladspa",
+    label: "LADSPA",
+    description: "Linux (legacy)",
+    disabled: true,
+  },
 ];
 
 const SAMPLE_RATES = [
@@ -116,9 +148,29 @@ export function App() {
   const [billing, setBilling] = useState("monthly");
   const p = PRICING[billing];
   const matrixTiers = [
-    { key: "free", name: "Free", price: "$0", period: p.period, cta: "Get started" },
-    { key: "basic", name: "Basic", price: p.basic, period: p.period, cta: "Choose Basic" },
-    { key: "pro", name: "Pro", price: p.pro, period: p.period, featured: true, badge: "Popular", cta: "Go Pro" },
+    {
+      key: "free",
+      name: "Free",
+      price: "$0",
+      period: p.period,
+      cta: "Get started",
+    },
+    {
+      key: "basic",
+      name: "Basic",
+      price: p.basic,
+      period: p.period,
+      cta: "Choose Basic",
+    },
+    {
+      key: "pro",
+      name: "Pro",
+      price: p.pro,
+      period: p.period,
+      featured: true,
+      badge: "Popular",
+      cta: "Go Pro",
+    },
   ];
 
   useEffect(() => {
@@ -126,7 +178,9 @@ export function App() {
   }, [theme]);
 
   const emailError =
-    email.length > 0 && !email.includes("@") ? "That doesn't look like an email." : "";
+    email.length > 0 && !email.includes("@")
+      ? "That doesn't look like an email."
+      : "";
 
   return (
     <div className="demo">
@@ -134,8 +188,8 @@ export function App() {
         <div>
           <h1 className="demo__brand">ArnieWaves</h1>
           <p className="demo__tag">
-            Small tools, fair prices, great sound. The component library — marker-pen
-            headings, monospace everything, warm earthy tones.
+            Small tools, fair prices, great sound. The component library —
+            marker-pen headings, monospace everything, warm earthy tones.
           </p>
         </div>
         <div className="demo__theme">
@@ -169,10 +223,16 @@ export function App() {
           <Button variant="primary" size="lg">
             Large
           </Button>
-          <Button variant="outline" leadingIcon={<Icon name="download" size={15} />}>
+          <Button
+            variant="outline"
+            leadingIcon={<Icon name="download" size={15} />}
+          >
             Download
           </Button>
-          <Button variant="primary" leadingIcon={<Icon name="play" size={14} />}>
+          <Button
+            variant="primary"
+            leadingIcon={<Icon name="play" size={14} />}
+          >
             Preview
           </Button>
         </div>
@@ -203,8 +263,10 @@ export function App() {
           ))}
         </div>
         <p className="demo__note">
-          Stroke-based, drawn on a 24×24 grid, colored by <code>currentColor</code>.
-          Use <code>&lt;Icon name="…" size={20} /&gt;</code>. {ICON_NAMES.length} icons.
+          Stroke-based, drawn on a 24×24 grid, colored by{" "}
+          <code>currentColor</code>. Use{" "}
+          <code>&lt;Icon name="…" size={20} /&gt;</code>. {ICON_NAMES.length}{" "}
+          icons.
         </p>
       </Section>
 
@@ -225,7 +287,12 @@ export function App() {
             leading={<span>%</span>}
             fullWidth
           />
-          <TextField label="Search presets" placeholder="Tape, plate, spring…" trailing={<span>⌕</span>} fullWidth />
+          <TextField
+            label="Search presets"
+            placeholder="Tape, plate, spring…"
+            trailing={<span>⌕</span>}
+            fullWidth
+          />
           <Textarea
             label="Notes for the maker"
             placeholder="Tell Arnie what you're building…"
@@ -257,13 +324,16 @@ export function App() {
           />
         </div>
         <p className="demo__note">
-          Keyboard: ↑/↓ to move, Enter to select, Esc to close. Search filters labels +
-          descriptions.
+          Keyboard: ↑/↓ to move, Enter to select, Esc to close. Search filters
+          labels + descriptions.
         </p>
       </Section>
 
       <Section label="Forms" title="Selection controls">
-        <div className="demo__row" style={{ gap: 40, alignItems: "flex-start" }}>
+        <div
+          className="demo__row"
+          style={{ gap: 40, alignItems: "flex-start" }}
+        >
           <div className="demo__stack">
             <Checkbox
               label="Email me about updates"
@@ -275,9 +345,24 @@ export function App() {
             <Checkbox label="Unavailable option" disabled />
           </div>
           <div className="demo__stack">
-            <Radio name="tier" label="Hobby — $19" checked={tier === "hobby"} onChange={() => setTier("hobby")} />
-            <Radio name="tier" label="Pro — $39" checked={tier === "pro"} onChange={() => setTier("pro")} />
-            <Radio name="tier" label="Studio — $89" checked={tier === "studio"} onChange={() => setTier("studio")} />
+            <Radio
+              name="tier"
+              label="Hobby — $19"
+              checked={tier === "hobby"}
+              onChange={() => setTier("hobby")}
+            />
+            <Radio
+              name="tier"
+              label="Pro — $39"
+              checked={tier === "pro"}
+              onChange={() => setTier("pro")}
+            />
+            <Radio
+              name="tier"
+              label="Studio — $89"
+              checked={tier === "studio"}
+              onChange={() => setTier("studio")}
+            />
           </div>
           <div className="demo__stack">
             <Toggle label="Low-latency mode" defaultChecked />
@@ -291,9 +376,17 @@ export function App() {
         <Card style={{ maxWidth: 460 }}>
           <SectionLabel>What's in the box</SectionLabel>
           <h2 style={{ margin: "8px 0 10px" }}>AudioTeleporter</h2>
-          <p style={{ fontSize: 13, lineHeight: 1.7, color: "var(--aw-muted)", margin: 0 }}>
-            Send audio anywhere with low latency and high fidelity. Pairs with everything
-            in the rack. A generic surface built from the same tokens as everything else.
+          <p
+            style={{
+              fontSize: 13,
+              lineHeight: 1.7,
+              color: "var(--aw-muted)",
+              margin: 0,
+            }}
+          >
+            Send audio anywhere with low latency and high fidelity. Pairs with
+            everything in the rack. A generic surface built from the same tokens
+            as everything else.
           </p>
           <div className="demo__row" style={{ marginTop: 18 }}>
             <Button variant="primary">Buy — $39</Button>
@@ -356,10 +449,14 @@ export function App() {
             Paste the license key from your order email. One key activates up to
             three machines — handy for a laptop rig and the studio desktop.
           </p>
-          <TextField label="License key" placeholder="AWAVE-XXXX-XXXX-XXXX" fullWidth />
+          <TextField
+            label="License key"
+            placeholder="AWAVE-XXXX-XXXX-XXXX"
+            fullWidth
+          />
           <p style={{ marginBottom: 0 }}>
-            Esc closes this, focus is trapped inside, and the background scroll is
-            locked — the usual dialog niceties.
+            Esc closes this, focus is trapped inside, and the background scroll
+            is locked — the usual dialog niceties.
           </p>
         </Modal>
       </Section>
@@ -395,7 +492,9 @@ export function App() {
             </Tabs.Panel>
           </Tabs>
         </Card>
-        <p className="demo__note">Keyboard: ←/→ to move between tabs, Home/End to jump.</p>
+        <p className="demo__note">
+          Keyboard: ←/→ to move between tabs, Home/End to jump.
+        </p>
       </Section>
 
       <Section label="Overlays" title="Tooltips">
@@ -403,7 +502,7 @@ export function App() {
           <Tooltip label="Sends to any peer on your network">
             <Button variant="outline">Hover me</Button>
           </Tooltip>
-          <Tooltip label="Below" placement="bottom">
+          <Tooltip label="Below." placement="bottom">
             <Button variant="ghost">Bottom</Button>
           </Tooltip>
           <Tooltip label="To the left" placement="left">
@@ -413,7 +512,9 @@ export function App() {
             <Button variant="ghost">Right</Button>
           </Tooltip>
         </div>
-        <p className="demo__note">Shows on hover and on keyboard focus — try tabbing to them.</p>
+        <p className="demo__note">
+          Shows on hover and on keyboard focus — try tabbing to them.
+        </p>
       </Section>
 
       <Section label="Commerce" title="Tier comparison">
@@ -481,8 +582,9 @@ export function App() {
       <Section label="Commerce" title="Feature matrix">
         <FeatureMatrix tiers={matrixTiers} groups={MATRIX_GROUPS} />
         <p className="demo__note">
-          Shares the billing toggle above — switch it and the header prices update. On
-          mobile the grid scrolls sideways with the feature column pinned.
+          Shares the billing toggle above — switch it and the header prices
+          update. On mobile the grid scrolls sideways with the feature column
+          pinned.
         </p>
       </Section>
 
@@ -497,7 +599,10 @@ export function App() {
               key: "status",
               header: "Status",
               render: (row) => (
-                <Badge variant={row.status === "Shipping" ? "orange" : "sand"} dot>
+                <Badge
+                  variant={row.status === "Shipping" ? "orange" : "sand"}
+                  dot
+                >
                   {row.status}
                 </Badge>
               ),
@@ -514,15 +619,39 @@ export function App() {
             },
           ]}
           data={[
-            { id: 1, name: "AudioTeleporter", price: "$39", formats: "VST3 · AU · AAX", status: "Shipping" },
-            { id: 2, name: "TapeWarmer", price: "$24", formats: "VST3 · AU", status: "Shipping" },
-            { id: 3, name: "SpringVerb", price: "$19", formats: "VST3 · AU · CLAP", status: "Shipping" },
-            { id: 4, name: "GrainCloud", price: "—", formats: "VST3", status: "Beta" },
+            {
+              id: 1,
+              name: "AudioTeleporter",
+              price: "$39",
+              formats: "VST3 · AU · AAX",
+              status: "Shipping",
+            },
+            {
+              id: 2,
+              name: "TapeWarmer",
+              price: "$24",
+              formats: "VST3 · AU",
+              status: "Shipping",
+            },
+            {
+              id: 3,
+              name: "SpringVerb",
+              price: "$19",
+              formats: "VST3 · AU · CLAP",
+              status: "Shipping",
+            },
+            {
+              id: 4,
+              name: "GrainCloud",
+              price: "—",
+              formats: "VST3",
+              status: "Beta",
+            },
           ]}
         />
         <p className="demo__note">
-          Resize the preview narrow (≤ 620px): each row reflows into a labeled card —
-          the column headers become inline labels, no horizontal scroll.
+          Resize the preview narrow (≤ 620px): each row reflows into a labeled
+          card — the column headers become inline labels, no horizontal scroll.
         </p>
       </Section>
 
@@ -533,37 +662,80 @@ export function App() {
           duration={184}
           seed={4}
         />
-        <p className="demo__note">Click the waveform to seek; the play button simulates transport.</p>
+        <p className="demo__note">
+          Click the waveform to seek; the play button simulates transport.
+        </p>
       </Section>
 
       <Section label="Audio" title="Knobs, sliders & meters">
         <div className="demo__row" style={{ gap: 40, alignItems: "flex-end" }}>
-          <Knob label="Gain" value={gain} onChange={setGain} valueLabel={(v) => `${v}%`} />
-          <Knob label="Mix" value={mix} onChange={setMix} valueLabel={(v) => `${v}%`} />
-          <div style={{ display: "flex", flexDirection: "column", gap: 6, alignItems: "center" }}>
+          <Knob
+            label="Gain"
+            value={gain}
+            onChange={setGain}
+            valueLabel={(v) => `${v}%`}
+          />
+          <Knob
+            label="Mix"
+            value={mix}
+            onChange={setMix}
+            valueLabel={(v) => `${v}%`}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 6,
+              alignItems: "center",
+            }}
+          >
             <LevelMeter animated channels={2} />
             <span className="aw-knob__label">Output</span>
           </div>
         </div>
         <div className="demo__stack" style={{ marginTop: 24 }}>
-          <Slider label="Input gain" value={gain} onChange={setGain} valueLabel={(v) => `${v} dB`} fullWidth />
-          <Slider label="Dry / wet" value={mix} onChange={setMix} valueLabel={(v) => `${v}%`} fullWidth />
+          <Slider
+            label="Input gain"
+            value={gain}
+            onChange={setGain}
+            valueLabel={(v) => `${v} dB`}
+            fullWidth
+          />
+          <Slider
+            label="Dry / wet"
+            value={mix}
+            onChange={setMix}
+            valueLabel={(v) => `${v}%`}
+            fullWidth
+          />
         </div>
-        <p className="demo__note">Drag the knobs (or arrow-key them); knobs and sliders share state here.</p>
+        <p className="demo__note">
+          Drag the knobs (or arrow-key them); knobs and sliders share state
+          here.
+        </p>
       </Section>
 
       <Section label="Marketing" title="Hero">
-        <Card padded={false} style={{ padding: "8px 24px", overflow: "hidden" }}>
+        <Card
+          padded={false}
+          style={{ padding: "8px 24px", overflow: "hidden" }}
+        >
           <Hero
             eyebrow="New · v1.3"
             title="Send audio anywhere."
             subtitle="Low latency, high fidelity, zero faff. The teleporter your rack has been missing — now with relay failover."
             actions={
               <>
-                <Button variant="primary" leadingIcon={<Icon name="download" size={15} />}>
+                <Button
+                  variant="primary"
+                  leadingIcon={<Icon name="download" size={15} />}
+                >
                   Get AudioTeleporter
                 </Button>
-                <Button variant="outline" leadingIcon={<Icon name="play" size={14} />}>
+                <Button
+                  variant="outline"
+                  leadingIcon={<Icon name="play" size={14} />}
+                >
                   Hear it
                 </Button>
               </>
@@ -579,19 +751,30 @@ export function App() {
 
       <Section label="Marketing" title="FAQ accordion">
         <Accordion defaultValue="latency">
-          <Accordion.Item value="latency" title="How low is the latency, really?">
-            Sub-3 ms round trip on a local network, and typically under 30 ms over a
-            decent internet connection with relay enabled.
+          <Accordion.Item
+            value="latency"
+            title="How low is the latency, really?"
+          >
+            Sub-3 ms round trip on a local network, and typically under 30 ms
+            over a decent internet connection with relay enabled.
           </Accordion.Item>
-          <Accordion.Item value="formats" title="Which plugin formats are supported?">
-            VST3, Audio Unit, AAX, and CLAP on both macOS (Universal) and Windows.
+          <Accordion.Item
+            value="formats"
+            title="Which plugin formats are supported?"
+          >
+            VST3, Audio Unit, AAX, and CLAP on both macOS (Universal) and
+            Windows.
           </Accordion.Item>
-          <Accordion.Item value="license" title="How many machines can I use one license on?">
-            Up to three — handy for a laptop rig and a studio desktop. The Pro tier adds
-            a multi-machine license for bigger setups.
+          <Accordion.Item
+            value="license"
+            title="How many machines can I use one license on?"
+          >
+            Up to three — handy for a laptop rig and a studio desktop. The Pro
+            tier adds a multi-machine license for bigger setups.
           </Accordion.Item>
           <Accordion.Item value="refund" title="What's the refund policy?">
-            14 days, no questions asked. Arnie would rather you were happy than stuck.
+            14 days, no questions asked. Arnie would rather you were happy than
+            stuck.
           </Accordion.Item>
         </Accordion>
       </Section>
@@ -620,13 +803,27 @@ export function App() {
             <Avatar name="Theo Lux" />
             <Avatar name="Nina Park" />
           </AvatarGroup>
-          <span className="demo__note" style={{ margin: 0 }}>Loved by 12,000+ makers</span>
+          <span className="demo__note" style={{ margin: 0 }}>
+            Loved by 12,000+ makers
+          </span>
         </div>
         <div className="demo__grid" style={{ marginTop: 18 }}>
           <Stat icon="bolt" value="2.4 ms" label="Median round-trip latency" />
-          <Stat icon="users" value="12,480" label="Active studios" delta="+8%" trend="up" />
+          <Stat
+            icon="users"
+            value="12,480"
+            label="Active studios"
+            delta="+8%"
+            trend="up"
+          />
           <Stat icon="star" value="4.9" label="Average rating" />
-          <Stat icon="globe" value="63" label="Countries" delta="+5" trend="up" />
+          <Stat
+            icon="globe"
+            value="63"
+            label="Countries"
+            delta="+5"
+            trend="up"
+          />
         </div>
       </Section>
 
@@ -643,20 +840,57 @@ export function App() {
 
       <Section label="Feedback" title="Toasts & alerts">
         <div className="demo__row">
-          <Button variant="primary" onClick={() => toast({ variant: "success", title: "Added to cart", message: "AudioTeleporter — $39" })}>
+          <Button
+            variant="primary"
+            onClick={() =>
+              toast({
+                variant: "success",
+                title: "Added to cart",
+                message: "AudioTeleporter — $39",
+              })
+            }
+          >
             Success toast
           </Button>
-          <Button variant="outline" onClick={() => toast({ variant: "info", title: "Heads up", message: "Your license email is on the way." })}>
+          <Button
+            variant="outline"
+            onClick={() =>
+              toast({
+                variant: "info",
+                title: "Heads up",
+                message: "Your license email is on the way.",
+              })
+            }
+          >
             Info toast
           </Button>
-          <Button variant="ghost" onClick={() => toast({ variant: "danger", title: "Payment failed", message: "Card was declined.", action: { label: "Retry" } })}>
+          <Button
+            variant="ghost"
+            onClick={() =>
+              toast({
+                variant: "danger",
+                title: "Payment failed",
+                message: "Card was declined.",
+                action: { label: "Retry" },
+              })
+            }
+          >
             Error toast
           </Button>
         </div>
-        <div className="demo__stack" style={{ maxWidth: 520, marginTop: 18, gap: 12 }}>
-          <Alert variant="success" title="License activated">You're all set on this machine.</Alert>
-          <Alert variant="warning" title="Trial ending soon">3 days left — upgrade to keep your presets.</Alert>
-          <Alert variant="danger" title="Connection lost" onClose={() => {}}>The relay dropped. Reconnecting…</Alert>
+        <div
+          className="demo__stack"
+          style={{ maxWidth: 520, marginTop: 18, gap: 12 }}
+        >
+          <Alert variant="success" title="License activated">
+            You're all set on this machine.
+          </Alert>
+          <Alert variant="warning" title="Trial ending soon">
+            3 days left — upgrade to keep your presets.
+          </Alert>
+          <Alert variant="danger" title="Connection lost" onClose={() => {}}>
+            The relay dropped. Reconnecting…
+          </Alert>
           <Alert variant="info">A new version (v1.3) is available.</Alert>
         </div>
       </Section>
@@ -666,24 +900,37 @@ export function App() {
           <Progress label="Uploading preset pack" value={mix} showValue />
           <Progress label="Rendering" indeterminate />
         </div>
-        <div className="demo__row" style={{ gap: 18, marginTop: 18, alignItems: "center" }}>
+        <div
+          className="demo__row"
+          style={{ gap: 18, marginTop: 18, alignItems: "center" }}
+        >
           <Spinner size={18} />
           <Spinner size={26} />
-          <Button variant="primary" loading>Working</Button>
+          <Button variant="primary" loading>
+            Working
+          </Button>
         </div>
         <Card style={{ maxWidth: 460, marginTop: 18 }} padded={false}>
           <EmptyState
             icon="shopping-cart"
             title="Your cart is empty"
             description="Browse the catalog and add a tool or two — Arnie's waiting."
-            action={<Button variant="primary" size="sm">Browse plugins</Button>}
+            action={
+              <Button variant="primary" size="sm">
+                Browse plugins
+              </Button>
+            }
           />
         </Card>
       </Section>
 
       <Section label="Commerce" title="Cart drawer, steppers & menus">
         <div className="demo__row" style={{ gap: 20, alignItems: "center" }}>
-          <Button variant="primary" leadingIcon={<Icon name="shopping-cart" size={15} />} onClick={() => setDrawerOpen(true)}>
+          <Button
+            variant="primary"
+            leadingIcon={<Icon name="shopping-cart" size={15} />}
+            onClick={() => setDrawerOpen(true)}
+          >
             Open cart
           </Button>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -692,7 +939,14 @@ export function App() {
           </div>
           <Menu
             align="start"
-            trigger={<Button variant="outline" trailingIcon={<Icon name="chevron-down" size={14} />}>Actions</Button>}
+            trigger={
+              <Button
+                variant="outline"
+                trailingIcon={<Icon name="chevron-down" size={14} />}
+              >
+                Actions
+              </Button>
+            }
             items={[
               { label: "Share preset", icon: "share" },
               { label: "Duplicate", icon: "copy", shortcut: "⌘D" },
@@ -708,16 +962,33 @@ export function App() {
           side="right"
           title="Your cart"
           footer={
-            <Button variant="primary" fullWidth onClick={() => { setDrawerOpen(false); toast({ variant: "success", title: "Order placed", message: "Check your email for downloads." }); }}>
+            <Button
+              variant="primary"
+              fullWidth
+              onClick={() => {
+                setDrawerOpen(false);
+                toast({
+                  variant: "success",
+                  title: "Order placed",
+                  message: "Check your email for downloads.",
+                });
+              }}
+            >
               Checkout · ${39 * qty}
             </Button>
           }
         >
-          <div className="demo__row" style={{ justifyContent: "space-between", color: "var(--aw-text)" }}>
+          <div
+            className="demo__row"
+            style={{ justifyContent: "space-between", color: "var(--aw-text)" }}
+          >
             <span style={{ fontWeight: 700 }}>AudioTeleporter</span>
             <Stepper value={qty} onChange={setQty} min={1} max={10} size="sm" />
           </div>
-          <p style={{ marginTop: 16 }}>Subtotal: ${39 * qty}.00 — shipping is free (it's a download, after all).</p>
+          <p style={{ marginTop: 16 }}>
+            Subtotal: ${39 * qty}.00 — shipping is free (it's a download, after
+            all).
+          </p>
         </Drawer>
       </Section>
 
@@ -747,7 +1018,8 @@ export function App() {
 
       <hr className="demo__divider" />
       <p className="demo__note" style={{ marginTop: 24 }}>
-        ArnieWaves design system · run <code>/design-sync ArnieWaves</code> to push to Claude Design.
+        ArnieWaves design system · run <code>/design-sync ArnieWaves</code> to
+        push to Claude Design.
       </p>
     </div>
   );

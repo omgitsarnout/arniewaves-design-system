@@ -4,6 +4,7 @@ import { Icon } from "./Icon.jsx";
 /**
  * Testimonial — quote card with optional star rating and an author row.
  * Props: quote, name, role, avatarSrc, rating (0–5)
+ * @category Marketing
  */
 export function Testimonial({
   quote,

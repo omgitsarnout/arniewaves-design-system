@@ -2,6 +2,7 @@
  * Badge / Pill — zine-label feel. Space Mono 700, 10px, 2px radius.
  * variant: "orange" | "sand" | "outline"
  * Optional `onRemove` renders a dismiss affordance (pill/tag use).
+ * @category Foundations
  */
 export function Badge({
   variant = "orange",

@@ -9,6 +9,7 @@ import { createPortal } from "react-dom";
  *   title, children, footer
  *   size: "sm" | "md" | "lg"
  *   closeOnOverlay (default true), showClose (default true)
+ * @category Feedback
  */
 export function Modal({
   open,

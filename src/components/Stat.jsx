@@ -4,6 +4,7 @@ import { Icon } from "./Icon.jsx";
  * Stat — a single metric/KPI. Optional `delta` with `trend` ("up"|"down")
  * renders a colored change indicator.
  * Props: label, value, delta, trend, icon (icon name or node)
+ * @category Data-Display
  */
 export function Stat({ label, value, delta, trend, icon, className = "" }) {
   return (

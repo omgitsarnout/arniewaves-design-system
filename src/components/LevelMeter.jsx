@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
  *
  * Props: value (0..1), segments, orientation "vertical"|"horizontal",
  *        channels (number of bars), animated, label
+ * @category Audio
  */
 export function LevelMeter({
   value = 0,
