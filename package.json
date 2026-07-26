@@ -1,6 +1,6 @@
 {
   "name": "@omgitsarnout/arniewaves-design-system",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "ArnieWaves design system — DIY, hand-crafted audio-tools aesthetic. React component library.",
   "license": "MIT",
   "type": "module",
@@ -14,6 +14,7 @@
       "import": "./dist/index.js"
     },
     "./styles.css": "./dist/arniewaves.css",
+    "./fonts/*": "./dist/fonts/*",
     "./package.json": "./package.json"
   },
   "files": [

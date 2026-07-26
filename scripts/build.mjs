@@ -6,8 +6,7 @@ const serve = process.argv.includes("--serve");
 const opts = {
   entryPoints: [
     "src/demo/main.jsx",
-    // CSS as entry points so the watcher rebuilds them too. esbuild leaves
-    // remote @import (Google Fonts) external by default.
+    // CSS as entry points so the watcher rebuilds them too.
     "src/styles/tokens.css",
     "src/styles/components.css",
     "src/demo/demo.css",
@@ -17,7 +16,11 @@ const opts = {
   entryNames: "[name]",
   format: "esm",
   jsx: "automatic",
-  loader: { ".js": "jsx" },
+  // tokens.css @font-face now points at local woff2 files; without a loader for
+  // them esbuild fails the CSS bundle outright. "file" emits them into
+  // public/fonts/ and rewrites the url() to match.
+  loader: { ".js": "jsx", ".woff2": "file" },
+  assetNames: "fonts/[name]-[hash]",
   sourcemap: true,
   logLevel: "info",
 };
