@@ -42,7 +42,12 @@ Badge tint (orange, light/dark mode aware):
 
 All UI text at or below 15px uses Space Mono, never Permanent Marker.
 
-Google Fonts URL: `https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:wght@400;700&display=swap`
+Both fonts are **self-hosted** — woff2 files in `src/styles/fonts/` with
+`@font-face` rules in `src/styles/tokens.css`. Do NOT reintroduce the Google
+Fonts `@import`: it hid the fonts from the browser's preload scanner and chained
+three serial round-trips, causing a visible fallback-font flash on first paint
+(and sent visitor IPs to Google). Add new weights by dropping the woff2 in that
+folder and adding a matching `@font-face` with its `unicode-range`.
 
 ## Spacing & shape
 

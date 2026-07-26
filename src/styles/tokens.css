@@ -2,7 +2,75 @@
    DIY, hand-crafted audio-tools aesthetic. Warm earthy tones, marker-pen
    headings, monospace body. Light + dark aware. */
 
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:wght@400;700&display=swap");
+/* Self-hosted fonts (woff2, latin + latin-ext).
+   Deliberately NOT loaded from fonts.googleapis.com: an @import there is
+   invisible to the browser's preload scanner and chains three serial
+   round-trips (our CSS -> googleapis CSS -> gstatic woff2) across two extra
+   origins, which showed as a visible fallback-font flash on first paint. It
+   also kept visitor IPs flowing to Google, which an EU site would rather avoid.
+   Consumers should additionally <link rel="preload"> these files — see README.
+
+   Paths are relative to this stylesheet, so bundlers (Vite/Astro) rewrite and
+   fingerprint them automatically. The files sit in ./fonts/ next to this file so
+   the same literal path also resolves from the emitted dist/arniewaves.css —
+   build-lib.mjs copies them there.
+
+   Licences ship alongside the files in fonts/:
+   Permanent Marker — Apache 2.0; Space Mono — SIL Open Font License 1.1. */
+
+/* Permanent Marker — display/headings (single weight). */
+@font-face {
+  font-family: "Permanent Marker";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/permanent-marker-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Space Mono — body text, regular + bold, latin and latin-ext. */
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/space-mono-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/space-mono-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/space-mono-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/space-mono-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
 :root {
   /* Brand palette */

@@ -43,8 +43,34 @@ import { Button, Badge, ProductCard } from "@omgitsarnout/arniewaves-design-syst
 <Badge variant="orange">$39</Badge>
 ```
 
-`styles.css` bundles the design tokens (incl. the Google Fonts `@import`) and every
-component's styles.
+`styles.css` bundles the design tokens and every component's styles.
+
+### Fonts
+
+The two brand fonts (Permanent Marker for display, Space Mono for body) are
+**self-hosted**: `styles.css` declares `@font-face` rules pointing at woff2 files
+shipped in the package, with `font-display: swap`. Nothing is fetched from
+Google — which avoids a slow three-hop request chain (and a visible
+fallback-font flash), and keeps visitor IPs away from Google's servers.
+
+Bundlers resolve and fingerprint the font files automatically from the
+stylesheet. For the fastest first paint, also **preload** the faces your pages
+actually use, so the browser starts fetching them before it has parsed the CSS:
+
+```astro
+---
+import bodyFont from "@omgitsarnout/arniewaves-design-system/fonts/space-mono-400-latin.woff2?url";
+import displayFont from "@omgitsarnout/arniewaves-design-system/fonts/permanent-marker-400-latin.woff2?url";
+---
+<link rel="preload" href={bodyFont} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin />
+```
+
+`crossorigin` is required even for same-origin fonts — without it the browser
+fetches the file twice. Available faces under `fonts/`: `permanent-marker-400`,
+`space-mono-{400,700}`, each in `-latin` and (Space Mono only) `-latin-ext`.
+Upstream licences ship next to them (Permanent Marker: Apache 2.0, Space Mono:
+SIL OFL 1.1).
 
 Dark mode is driven by a data attribute on the root element:
 
